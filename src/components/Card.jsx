@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import avatar from '../../public/my-avatar.png';
 import Resume from './Resume.jsx';
+import Portfolio from './Portfolio.jsx';
+import { div } from 'framer-motion/client';
+import Contact from './Contact.jsx';
 
 
 const Card = () => {
@@ -8,7 +11,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('resume');
+  const [activeTab, setActiveTab] = useState('portfolio');
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -81,7 +84,7 @@ const Card = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  if (screenSize.width < 550) {
+  if (screenSize.width < 700) {
     return (
       <div className='h-auto w-full'>
         <div className='relative rounded-2xl p-5 bg-white/10 backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
@@ -186,16 +189,14 @@ const Card = () => {
           )}
 
           {activeTab === 'portfolio' && (
-            <div className='mt-5 p-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl'>
-              <h2 className='text-xl font-bold text-gray-100'>Portfolio</h2>
-              <p className='text-gray-300'>I am a FullStack Developer with a passion for building web applications.</p>
+            <div className='mt-5'>
+                <Portfolio />
             </div>
           )}
 
           {activeTab === 'contact' && (
-            <div className='mt-5 p-5 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl'>
-              <h2 className='text-xl font-bold text-gray-100'>Contact</h2>
-              <p className='text-gray-300'>I am a FullStack Developer with a passion for building web applications.</p>
+            <div>
+                <Contact />
             </div>
           )}
         </div>

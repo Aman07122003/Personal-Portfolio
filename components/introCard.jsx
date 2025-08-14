@@ -3,7 +3,7 @@ import avatar from '../public/my-avatar.png';
 import Resume from './Resume.jsx';
 
 
-const IntroCard = () => {
+const introCard = () => {
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -237,4 +237,4 @@ const IntroCard = () => {
   );
 };
 
-export default IntroCard;
+export default introCard;

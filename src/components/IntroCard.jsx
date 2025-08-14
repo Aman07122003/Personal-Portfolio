@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import avatar from '../public/my-avatar.png';
+import avatar from '../../public/my-avatar.png';
 import Resume from './Resume.jsx';
 
 

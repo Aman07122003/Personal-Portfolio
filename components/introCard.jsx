@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import avatar from '../public/my-avatar.png';
-import Resume from './Resume';
-import { div } from 'framer-motion/client';
+import Resume from './Resume.jsx';
+
 
 const IntroCard = () => {
   const [screenSize, setScreenSize] = useState({

@@ -87,7 +87,7 @@ const Card = () => {
   if (screenSize.width < 700) {
     return (
       <div className='h-auto w-full'>
-        <div className='relative rounded-2xl p-5 bg-white/10 backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
+        <div className='relative rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
           
           <div className='flex gap-x-3'>
             <div className='bg-white/20 backdrop-blur-md border border-white/20 w-[27%] rounded-2xl flex justify-center items-center'>

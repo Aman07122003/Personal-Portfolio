@@ -87,10 +87,10 @@ const Card = () => {
   if (screenSize.width < 700) {
     return (
       <div className='h-auto w-full'>
-        <div className='relative rounded-2xl p-3 bg-white/10 backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
+        <div className='relative rounded-2xl p-3 bg-[rgb(30,30,32)] backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
           
-          <div className='flex gap-x-3'>
-            <div className='bg-white/20 backdrop-blur-md border border-white/20 w-[27%] rounded-2xl flex justify-center items-center'>
+          <div className='flex gap-x-4'>
+            <div className='bg-[rgb(30,30,32)] backdrop-blur-md border border-white/20 w-20 h-20 rounded-2xl flex justify-center items-center'>
               <div className='flex justify-center items-center h-full w-full'>
                 <img src={avatar} alt="avatar" className='overflow-hidden h-full w-full'/>
               </div>
@@ -98,8 +98,8 @@ const Card = () => {
         
             <div className='w-[55%] flex flex-col justify-around'>
               <h1 className='font-bold text-white'>Aman Pratap Singh</h1>
-              <div className='h-8 w-30 p-2 rounded-2xl bg-gray-200 text-[10px] flex items-center justify-center'>
-                <p>FullStack Developer</p>
+              <div className='h-8 w-32 p-2 rounded-2xl bg-white/5 text-[10px] border border-white/5 flex items-center justify-center'>
+                <p className='text-gray-300 tracking-wide'>FullStack Developer</p>
               </div>
             </div>
         

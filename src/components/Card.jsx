@@ -11,7 +11,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('portfolio');
+  const [activeTab, setActiveTab] = useState('contact');
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {

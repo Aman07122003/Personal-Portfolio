@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './components/Card.jsx';
 const App = () => {
   return (
-    <div className="bg-[rgb(18,18,18)] h-auto p-2">
+    <div className="bg-[rgb(18,18,18)] h-auto p-3">
       <Card />
     </div>
   );

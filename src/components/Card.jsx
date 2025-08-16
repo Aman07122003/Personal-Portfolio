@@ -2,8 +2,14 @@ import React, { useState, useEffect } from 'react';
 import avatar from '../../public/my-avatar.png';
 import Resume from './Resume.jsx';
 import Portfolio from './Portfolio.jsx';
-import { div } from 'framer-motion/client';
 import Contact from './Contact.jsx';
+import Vcard from './Laptop_Screen/Vcard.jsx';
+import { 
+  FaLinkedin, FaGithub, FaTwitter, FaInstagram, 
+  FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt 
+} from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+
 
 
 const Card = () => {
@@ -19,30 +25,10 @@ const Card = () => {
   }
 
   const personalInfo = [
-    {
-      id: 1,
-      icon: "",
-      name: "EMAIL",
-      input: "samanpratap219@gmail.com",
-    },
-    {
-      id: 2,
-      icon: "",
-      name: "PHONE",
-      input: "+91 9351873908",
-    },
-    {
-      id: 3,
-      icon: "",
-      name: "BIRTHDAY",
-      input: "December 07, 2003",
-    },
-    {
-      id: 4,
-      icon: "",
-      name: "LOCATION",
-      input: "New Delhi, India",
-    }
+    { id: 1, icon: MdEmail, name: "EMAIL", input: "samanpratap219@gmail.com" },
+    { id: 2, icon: FaPhoneAlt, name: "PHONE", input: "+91 9351873908" },
+    { id: 3, icon: FaBirthdayCake, name: "BIRTHDAY", input: "December 07, 2003" },
+    { id: 4, icon: FaMapMarkerAlt, name: "LOCATION", input: "New Delhi, India" }
   ];  
 
   const what_im_working_on = [
@@ -111,19 +97,24 @@ const Card = () => {
           <div className={`overflow-hidden flex flex-col gap-y-3 transition-all duration-700 ease-in-out ${
           toggle ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
         }`}>
-            <div className='border mt-3'></div>
+            <div className='mt-3 bg-white/5 h-1'></div>
 
-            <div className='flex flex-col gap-y-2'>
-              {personalInfo.map((Items) => (
-                <div className='h-[80px] bg-amber-50 w-full flex gap-x-1.5' key={Items.id}>
-                  <div className='w-[20%] bg-amber-600'>{Items.icon}</div>
-                  <div className='gap-y-1 justify-center flex flex-col'>
-                    <h1>{Items.name}</h1>
-                    <p>{Items.input}</p>
+            <div className='flex flex-col gap-y-5'>
+            {personalInfo.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div className='h-[62px] w-full flex items-center gap-x-4' key={item.id}>
+                  <div className='w-[20%] flex justify-center items-center'>
+                    <Icon className='text-yellow-400 text-xl' />
+                  </div>
+                  <div className='flex flex-col text-sm'>
+                    <h1 className='text-gray-400'>{item.name}</h1>
+                    <p className='text-white'>{item.input}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
+          </div>
           </div>
       
         </div>
@@ -232,8 +223,7 @@ const Card = () => {
 
   return (
     <div className="intro-card">
-      <h1>Welcome to the Intro Card</h1>
-      <p>This is a responsive intro card that adjusts based on screen size.</p>
+      <Vcard />
     </div>
   );
 };

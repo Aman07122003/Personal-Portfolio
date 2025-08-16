@@ -9,7 +9,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `token ${TOKEN}`,
+    Authorization: `token ${API_KEY}`,
     Accept: "application/vnd.github.v3+json",
   },
 });

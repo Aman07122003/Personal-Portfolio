@@ -17,7 +17,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('contact');
+  const [activeTab, setActiveTab] = useState('resume');
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {

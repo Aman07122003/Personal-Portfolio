@@ -4,11 +4,13 @@ import Resume from './Resume.jsx';
 import Portfolio from './Portfolio.jsx';
 import Contact from './Contact.jsx';
 import Vcard from './Laptop_Screen/Vcard.jsx';
+import amitSharma from '../assets/amitSharma.jpg';
 import { 
   FaLinkedin, FaGithub, FaTwitter, FaInstagram, 
   FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt 
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import LeetCodeStats from './Stats/LeetCodeStats.jsx';
 
 
 
@@ -17,7 +19,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('portfolio');
+  const [activeTab, setActiveTab] = useState('about');
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -131,6 +133,13 @@ const Card = () => {
 
                 <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>I enjoy problem-solving and continuously learning new skills to enhance my development toolkit. In my free time, I like to contribute to open-source projects and explore the latest trends in web development.</p>
               </div>
+              <div className='mt-5'>
+                <h2 className='text-2xl font-bold text-gray-100'>LeetCode Stats</h2>
+                <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>
+                <div className='mt-5'>
+                  <LeetCodeStats username="Aman07122003" />
+                </div>
+              </div>
               <div className='text-gray-100 font-bold text-xl'>What I'm Working On</div>
               {what_im_working_on.map((item) => (
                 <div className='h-44 p-5 rounded-2xl gap-y-3 bg-white/5 backdrop-blur-md border border-white/20 flex flex-col justify-center items-center'>
@@ -151,7 +160,7 @@ const Card = () => {
                     <div className="absolute -top-10 left-5">
                       <div className="h-20 w-18 rounded-2xl bg-[rgb(56,56,56)] border border-white/20 overflow-hidden">
                         <img
-                          src={avatar}
+                          src={amitSharma}
                           alt="Profile"
                           className="h-full w-full object-cover"
                         />
@@ -160,10 +169,10 @@ const Card = () => {
 
                     {/* Testimonial Content */}
                     <p className="text-gray-300 text-sm italic mt-8">
-                      "This is the testimonial text. It looks elegant and is easy to read on any background."
+                      "I strongly recommend Mr. Aman Pratap Singh for internship opportunities or any role requiring a technically competent and motivated candidate. I am confident he will be an asset to any organization he joins."
                     </p>
-                    <h4 className="mt-4 text-gray-100 font-semibold">John Doe</h4>
-                    <span className="text-gray-400 text-xs">CEO, Example Corp</span>
+                    <h4 className="mt-4 text-gray-100 font-semibold">Dr. Amit Sharma</h4>
+                    <span className="text-gray-400 text-xs">Branch Coordinator, Computer Science</span>
                   </div>
               </div>
 

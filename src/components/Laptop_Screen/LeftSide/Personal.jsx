@@ -4,6 +4,7 @@ import {
   FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt 
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import avatar from '../../../assets/my-avatar.png'; 
 
 const personalInfo = [
   { id: 1, icon: MdEmail, name: "EMAIL", input: "samanpratap219@gmail.com" },
@@ -13,10 +14,10 @@ const personalInfo = [
 ];
 
 const socialLinks = [
-  { id: 1, icon: FaLinkedin, name: "LinkedIn", link: "https://www.linkedin.com/in/aman-pratap-singh-7b0a1b1b6/" },
-  { id: 2, icon: FaGithub, name: "GitHub", link: "https://github.com/yourusername" },
-  { id: 3, icon: FaTwitter, name: "Twitter", link: "https://twitter.com/yourusername" },
-  { id: 4, icon: FaInstagram, name: "Instagram", link: "https://instagram.com/yourusername" }
+  { id: 1, icon: FaLinkedin, name: "LinkedIn", link: "www.linkedin.com/in/aman-pratap-singh-5349531aa" },
+  { id: 2, icon: FaGithub, name: "GitHub", link: "https://github.com/Aman07122003" },
+  { id: 3, icon: FaTwitter, name: "Twitter", link: "https://x.com/amanpra99478508" },
+  { id: 4, icon: FaInstagram, name: "Instagram", link: "https://instagram.com/beeinghumbl" }
 ];
 
 const Personal = () => {
@@ -26,7 +27,9 @@ const Personal = () => {
         
         {/* Profile Section */}
         <div className='h-[45%] w-full flex flex-col gap-y-5 justify-center items-center'>
-          <div className='h-35 w-35 bg-white/5 rounded-2xl border border-white/20'></div>
+          <div className='h-35 w-30 rounded-2xl'>
+           <img src={avatar} alt="" className=' rounded-full border-[0.05px] border-white/20 shadow-2xl hover:scale-105 ease-in-out duration-150 h-full w-full'/>
+          </div>
           <div className='text-2xl text-white font-bold'>Aman Pratap Singh</div>
           <div className='h-8 w-40 bg-white/10 p-2 flex text-gray-400 items-center justify-center text-sm rounded-2xl'>
             Full Stack Developer

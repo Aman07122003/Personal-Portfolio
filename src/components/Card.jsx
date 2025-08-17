@@ -5,12 +5,15 @@ import Portfolio from './Portfolio.jsx';
 import Contact from './Contact.jsx';
 import Vcard from './Laptop_Screen/Vcard.jsx';
 import amitSharma from '../assets/amitSharma.jpg';
+import devops from '../assets/devops.png';
 import { 
   FaLinkedin, FaGithub, FaTwitter, FaInstagram, 
   FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt 
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import LeetCodeStats from './Stats/LeetCodeStats.jsx';
+import AI from '../assets/AI.png'
+import Flutter from '../assets/Flutter.png'
 
 
 
@@ -36,27 +39,27 @@ const Card = () => {
   const what_im_working_on = [
     {
       id: 1,
-      icon: "",
-      name: "React",
-      input: "Building responsive web applications",
+      icon: devops,
+      name: "DevOps",
+      input: "Implementing CI/CD pipelines and automation",
+      textStyle: "text-green-200 text-sm",
+      theam: "from-green-700 to-green-400",
     },
     {
       id: 2,
-      icon: "",
-      name: "Node.js",
-      input: "Developing RESTful APIs",
+      icon: AI, // replace with your AI icon/image
+      name: "Artificial Intelligence",
+      input: "Building intelligent systems with ML & NLP",
+      textStyle: "text-purple-200 text-sm",
+      theam: "from-purple-400 to-purple-700",
     },
     {
       id: 3,
-      icon: "",
-      name: "MongoDB",
-      input: "Database management and integration",
-    },
-    {
-      id: 4,
-      icon: "",
-      name: "Tailwind CSS",
-      input: "Styling web applications with utility-first CSS Styling web applications with",
+      icon: Flutter,
+      name: "Flutter",
+      input: "Mobile development with cross-platform apps",
+      textStyle: "text-sky-200 text-sm",
+      theam: "from-blue-400 to-blue-700",
     }
   ];
 
@@ -142,12 +145,14 @@ const Card = () => {
               </div>
               <div className='text-gray-100 font-bold text-xl'>What I'm Working On</div>
               {what_im_working_on.map((item) => (
-                <div className='h-44 p-5 rounded-2xl gap-y-3 bg-white/5 backdrop-blur-md border border-white/20 flex flex-col justify-center items-center'>
-                  <div className='w-[10%] h-10 bg-amber-100'></div>
+                <div className={`h-50 p-5 rounded-2xl gap-y-3 bg-gradient-to-r ${item.theam} backdrop-blur-md border border-white/20 flex flex-col justify-center items-center`}>
+                  <div className='w-50 h-30 flex justify-center'>
+                    <img src={item.icon} alt={item.name} className='h-full object-cover rounded-2xl' />
+                  </div>
                   <div className='flex justify-center flex-col items-center gap-y-2'>
                     <h2 className='text-xl font-bold text-gray-100'>{item.name}</h2>
                     <div className="flex items-center justify-center">
-                      <p className="text-gray-300 text-sm text-center">{item.input}</p>
+                      <p className={`${item.textStyle} text-center"`}>{item.input}</p>
                     </div>
                   </div>
                 </div>
@@ -171,7 +176,7 @@ const Card = () => {
                     <p className="text-gray-300 text-sm italic mt-8">
                       "I strongly recommend Mr. Aman Pratap Singh for internship opportunities or any role requiring a technically competent and motivated candidate. I am confident he will be an asset to any organization he joins."
                     </p>
-                    <h4 className="mt-4 text-gray-100 font-semibold">Dr. Amit Sharma</h4>
+                    <h4 className="mt-4 text-amber-400 font-semibold">Dr. Amit Sharma</h4>
                     <span className="text-gray-400 text-xs">Branch Coordinator, Computer Science</span>
                   </div>
               </div>

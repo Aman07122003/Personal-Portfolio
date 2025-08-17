@@ -17,7 +17,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('resume');
+  const [activeTab, setActiveTab] = useState('portfolio');
   const [toggle, setToggle] = useState(false);
 
   const handleToggle = () => {
@@ -78,7 +78,7 @@ const Card = () => {
           <div className='flex gap-x-4'>
             <div className='bg-[rgb(30,30,32)] backdrop-blur-md border border-white/20 w-20 h-20 rounded-2xl flex justify-center items-center'>
               <div className='flex justify-center items-center h-full w-full'>
-                <img src={avatar} alt="avatar" className='overflow-hidden h-full w-full'/>
+                <img src={avatar} alt="avatar" className='overflow-hidden h-15 rounded-2xl w-15'/>
               </div>
             </div>
         

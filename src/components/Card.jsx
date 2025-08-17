@@ -18,7 +18,7 @@ const Card = () => {
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('portfolio');
+  const [activeTab, setActiveTab] = useState('resume');
   const [toggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 

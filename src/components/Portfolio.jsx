@@ -45,7 +45,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section className="py-5 px-4 border border-white/10 bg-[rgb(27,37,50)] rounded-2xl mx-auto">
+    <section className="py-5 px-4 mt-2 border border-white/10 bg-[rgb(27,37,50)] rounded-2xl mx-auto">
       {/* Section Header */}
       <div className="text-start mb-12">
         <h2 className="text-2xl font-bold text-white mb-3">My Projects</h2>

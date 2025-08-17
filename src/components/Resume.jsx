@@ -46,7 +46,7 @@ export default function Resume() {
 
   return (
     <motion.article 
-      className="resume mx-auto p-5 rounded-2xl bg-[rgb(27,37,50)] backdrop-blur-md border border-white/20"
+      className="resume mt-2 mx-auto p-5 rounded-2xl bg-[rgb(27,37,50)] backdrop-blur-md border border-white/20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -73,7 +73,7 @@ export default function Resume() {
         <p className="text-gray-400 mt-2 text-sm">Professional journey and qualifications</p>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 gap-12">
         {/* Education Column */}
         <section className="space-y-8">
           <div className="flex items-center gap-4">

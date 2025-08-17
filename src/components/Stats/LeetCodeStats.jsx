@@ -58,7 +58,7 @@ const LeetCodeStats = ({ username = "Aman07122003" }) => {
   }
 
   return (
-    <div className="mx-auto p-4 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-amber-500/30 hover:scale-[1.02]">
+    <div className="mx-auto p-2 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-amber-500/30 hover:scale-[1.02]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">

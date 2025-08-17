@@ -36,7 +36,7 @@ const About = () => {
       ];
 
   return (
-       <div className='mt-5 p-5 bg-[rgb(28,39,55)] backdrop-blur-md border border-white/20 rounded-2xl flex flex-col gap-y-5'>
+       <div className='mt-2 p-3 bg-[rgb(28,39,55)] backdrop-blur-md border border-white/20 rounded-2xl flex flex-col gap-y-5'>
               <div>
                 <h2 className='text-2xl font-bold text-gray-100'>About Me</h2> 
                 <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>

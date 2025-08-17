@@ -65,7 +65,7 @@ const Card = () => {
       <div className='min-h-screen w-full pb-20'>
         {/* Header Card */}
         <motion.div 
-          className='relative rounded-2xl p-4 m-4 bg-gray-800/80 backdrop-blur-md border border-gray-700 shadow-lg'
+          className='relative rounded-2xl p-2 bg-gray-800/80 backdrop-blur-md border border-gray-700 shadow-lg'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -145,7 +145,7 @@ const Card = () => {
         </motion.div>
 
         {/* Section Content */}
-        <div className='px-4'>
+        <div className='p-1'>
           {activeTab === 'about' && <About />}
           {activeTab === 'resume' && <Resume />}
           {activeTab === 'portfolio' && <Portfolio />}

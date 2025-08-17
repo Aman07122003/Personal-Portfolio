@@ -4,26 +4,23 @@ import Resume from './Resume.jsx';
 import Portfolio from './Portfolio.jsx';
 import Contact from './Contact.jsx';
 import Vcard from './Laptop_Screen/Vcard.jsx';
-import amitSharma from '../assets/amitSharma.jpg';
-import devops from '../assets/devops.png';
 import { 
   FaLinkedin, FaGithub, FaTwitter, FaInstagram, 
-  FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt 
+  FaPhoneAlt, FaBirthdayCake, FaMapMarkerAlt,
+  FaTimes, FaBars 
 } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import LeetCodeStats from './Stats/LeetCodeStats.jsx';
-import AI from '../assets/AI.png'
-import Flutter from '../assets/Flutter.png'
-
-
+import About from './About.jsx';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Card = () => {
   const [screenSize, setScreenSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
   });
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('portfolio');
   const [toggle, setToggle] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -34,33 +31,13 @@ const Card = () => {
     { id: 2, icon: FaPhoneAlt, name: "PHONE", input: "+91 9351873908" },
     { id: 3, icon: FaBirthdayCake, name: "BIRTHDAY", input: "December 07, 2003" },
     { id: 4, icon: FaMapMarkerAlt, name: "LOCATION", input: "New Delhi, India" }
-  ];  
+  ];
 
-  const what_im_working_on = [
-    {
-      id: 1,
-      icon: devops,
-      name: "DevOps",
-      input: "Implementing CI/CD pipelines and automation",
-      textStyle: "text-green-200 text-[11px]",
-      theam: "from-green-700 to-green-400",
-    },
-    {
-      id: 2,
-      icon: AI, // replace with your AI icon/image
-      name: "Artificial Intelligence",
-      input: "Building intelligent systems with ML & NLP",
-      textStyle: "text-purple-200 text-[11px]",
-      theam: "from-purple-400 to-purple-700",
-    },
-    {
-      id: 3,
-      icon: Flutter,
-      name: "Flutter",
-      input: "Mobile development with cross-platform apps",
-      textStyle: "text-sky-200 text-[11px]",
-      theam: "from-blue-400 to-blue-700",
-    }
+  const socialLinks = [
+    { id: 1, icon: FaLinkedin, name: "LinkedIn", link: "www.linkedin.com/in/aman-pratap-singh-5349531aa" },
+    { id: 2, icon: FaGithub, name: "GitHub", link: "https://github.com/Aman07122003" },
+    { id: 3, icon: FaTwitter, name: "Twitter", link: "https://x.com/amanpra99478508" },
+    { id: 4, icon: FaInstagram, name: "Instagram", link: "https://instagram.com/beeinghumbl" }
   ];
 
   useEffect(() => {
@@ -71,163 +48,141 @@ const Card = () => {
       });
     };
 
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   if (screenSize.width < 700) {
     return (
-      <div className='h-auto w-full'>
-        <div className='relative rounded-2xl p-3 bg-[rgb(30,30,32)] backdrop-blur-md border border-white/20 flex flex-col gap-y-0 '>
-          
-          <div className='flex gap-x-4'>
-            <div className='bg-[rgb(30,30,32)] backdrop-blur-md border border-white/20 w-20 h-20 rounded-2xl flex justify-center items-center'>
-              <div className='flex justify-center items-center h-full w-full'>
-                <img src={avatar} alt="avatar" className='overflow-hidden h-15 rounded-2xl w-15'/>
+      <div className='min-h-screen w-full pb-20'>
+        {/* Header Card */}
+        <motion.div 
+          className='relative rounded-2xl p-4 m-4 bg-gray-800/80 backdrop-blur-md border border-gray-700 shadow-lg'
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className='flex gap-x-4 items-center'>
+            <motion.img 
+              src={avatar} 
+              alt="avatar" 
+              className='h-20 w-20 rounded-full border-2 p-2 border-white/10 object-cover shadow-md'
+              whileHover={{ scale: 1.05 }}
+            />
+            
+            <div className='flex-1 flex flex-col justify-center'>
+              <h1 className='font-bold text-white text-lg'>Aman Pratap Singh</h1>
+              <div className='mt-1 px-3 py-1 rounded-full bg-gray-700/50 border border-gray-600 w-fit'>
+                <p className='text-gray-300 text-xs tracking-wide'>FullStack Developer</p>
+              </div>
+              
+              {/* Social Icons */}
+              <div className='mt-auto'>
+                <div className='flex gap-x-3 mt-2 ml-2'>
+                  {socialLinks.map((link) => {
+                    const Icon = link.icon;
+                    return (
+                      <a 
+                        href={link.link} 
+                        key={link.id} 
+                        target='_blank' 
+                        rel='noopener noreferrer'
+                        className='flex items-center justify-center w-5 h-5 bg-yellow-500 rounded-full hover:scale-110 transition-transform duration-300'
+                      >
+                        <Icon className='text-black text-sm' />
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
         
-            <div className='w-[55%] flex flex-col justify-around'>
-              <h1 className='font-bold text-white'>Aman Pratap Singh</h1>
-              <div className='h-8 w-32 p-2 rounded-2xl bg-white/5 text-[10px] border border-white/5 flex items-center justify-center'>
-                <p className='text-gray-300 tracking-wide'>FullStack Developer</p>
-              </div>
-            </div>
-        
-            <button onClick={() => setToggle((prev) => !prev) } className='absolute top-2 right-2 h-8 w-8 bg-gray-300 rounded-md'>
-              {toggle ? 'X' : '☰'}
+            <button 
+              onClick={handleToggle}
+              className='h-9 w-9 flex items-center justify-center bg-gray-700/50 rounded-full border border-gray-600 text-gray-300 hover:text-amber-400 transition-colors'
+            >
+              {toggle ? <FaTimes size={14} /> : <FaBars size={14} />}
             </button>
           </div>
           
-          <div className={`overflow-hidden flex flex-col gap-y-3 transition-all duration-700 ease-in-out ${
-          toggle ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-        }`}>
-            <div className='mt-3 bg-white/5 h-1'></div>
-
-            <div className='flex flex-col gap-y-5'>
-            {personalInfo.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div className='h-[62px] w-full flex items-center gap-x-4' key={item.id}>
-                  <div className='w-[20%] flex justify-center items-center'>
-                    <Icon className='text-yellow-400 text-xl' />
-                  </div>
-                  <div className='flex flex-col text-sm'>
-                    <h1 className='text-gray-400'>{item.name}</h1>
-                    <p className='text-white'>{item.input}</p>
-                  </div>
+          {/* Personal Info Dropdown */}
+          <AnimatePresence>
+            {toggle && (
+              <motion.div 
+                className='mt-4 pt-4 border-t border-gray-700'
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className='flex flex-col gap-y-4'>
+                  {personalInfo.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <div className='flex items-center gap-x-4' key={item.id}>
+                        <div className='p-2 bg-gray-700/50 rounded-full'>
+                          <Icon className='text-amber-400 text-lg' />
+                        </div>
+                        <div className='flex-1'>
+                          <h1 className='text-gray-400 text-xs'>{item.name}</h1>
+                          <p className='text-white text-sm mt-1'>{item.input}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
-          </div>
-      
-        </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
 
         {/* Section Content */}
-        <div className='mb-20'>
-          {activeTab === 'about' && (
-            <div className='mt-5 p-5 bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl flex flex-col gap-y-5'>
-              <div>
-                <h2 className='text-2xl font-bold text-gray-100'>About Me</h2> 
-                <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>
-                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>Hello! I'm a passionate web developer with a keen interest in creating dynamic and responsive web applications. I have experience in various technologies including React, Node.js, and MongoDB. My goal is to build user-friendly interfaces that provide seamless experiences across devices.
-                </p>
-
-                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>I enjoy problem-solving and continuously learning new skills to enhance my development toolkit. In my free time, I like to contribute to open-source projects and explore the latest trends in web development.</p>
-              </div>
-              <div className='mt-5'>
-                <h2 className='text-2xl font-bold text-gray-100'>LeetCode Stats</h2>
-                <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>
-                <div className='mt-5'>
-                  <LeetCodeStats username="Aman07122003" />
-                </div>
-              </div>
-              <div className='text-gray-100 font-bold text-xl'>What I'm Working On</div>
-              {what_im_working_on.map((item) => (
-                <div className={`h-50 p-5 rounded-2xl gap-y-3 bg-gradient-to-r ${item.theam} backdrop-blur-md border border-white/20 flex flex-col justify-center items-center`}>
-                  <div className='w-40 h-20 flex justify-center'>
-                    <img src={item.icon} alt={item.name} className='h-full object-cover rounded-2xl' />
-                  </div>
-                  <div className='flex justify-center flex-col items-center gap-y-2'>
-                    <h2 className='text-xl font-bold text-gray-100'>{item.name}</h2>
-                    <p className={`${item.textStyle} text-center"`}>{item.input}</p>
-                  </div>
-                </div>
-              ))}
-              <div className='text-gray-100 font-bold text-xl'>Testimonials</div>
-                <div className='flex justify-center items-center'> 
-                
-                  <div className="relative p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl mt-10">
-                    {/* Profile Pic Container */}
-                    <div className="absolute -top-10 left-5">
-                      <div className="h-20 w-18 rounded-2xl bg-[rgb(56,56,56)] border border-white/20 overflow-hidden">
-                        <img
-                          src={amitSharma}
-                          alt="Profile"
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Testimonial Content */}
-                    <p className="text-gray-300 text-sm italic mt-8">
-                      "I strongly recommend Mr. Aman Pratap Singh for internship opportunities or any role requiring a technically competent and motivated candidate. I am confident he will be an asset to any organization he joins."
-                    </p>
-                    <h4 className="mt-4 text-amber-400 font-semibold">Dr. Amit Sharma</h4>
-                    <span className="text-gray-400 text-xs">Branch Coordinator, Computer Science</span>
-                  </div>
-              </div>
-
-            </div >
-
-          )}
-
-          {activeTab === 'resume' && (
-            <div className='mt-5'>
-              <Resume />
-            </div>
-          )}
-
-          {activeTab === 'portfolio' && (
-            <div className='mt-5'>
-                <Portfolio />
-            </div>
-          )}
-
-          {activeTab === 'contact' && (
-            <div>
-                <Contact />
-            </div>
-          )}
+        <div className='px-4'>
+          {activeTab === 'about' && <About />}
+          {activeTab === 'resume' && <Resume />}
+          {activeTab === 'portfolio' && <Portfolio />}
+          {activeTab === 'contact' && <Contact />}
         </div>
 
-        <div className='h-16 mt-20 w-full  bg-white/10 backdrop-blur-md  border-t-2 border-white/20 rounded-t-3xl bottom-0 left-0 r fixed flex items-center justify-center gap-x-2'>
-          <button onClick={() => setActiveTab("about")} className={`h-10 w-20 text-sm cursor-pointer ${
-              activeTab === "about"
-                ? "text-[rgb(252,219,112)]"
-                : "text-gray-100"
-            }`}>About</button>
-          <button onClick={() => setActiveTab("resume")} className={`h-10 w-20 text-sm cursor-pointer ${
-            activeTab === "resume"
-              ? "text-[rgb(252,219,112)]"
-              : "text-gray-100"
-          }`}>Resume</button>
-          <button onClick={() => setActiveTab("portfolio")} className={`h-10 w-20 text-sm cursor-pointer ${
-            activeTab === "portfolio"
-              ? "text-[rgb(252,219,112)]"
-              : "text-gray-100"
-          }`}>Portfolio</button>
-          <button onClick={() => {
-            setActiveTab("contact");
-          }} className={`h-10 w-20 text-sm cursor-pointer ${
-            activeTab === "contact"
-              ? "text-[rgb(252,219,112)]"
-              : "text-gray-100"
-          }`}>Contact</button>
-        </div>
-     </div>
-    
+        {/* Bottom Navigation */}
+        <motion.div 
+          className={`h-16 mt-20 w-full  bg-white/5 backdrop-blur-md  border-t-2 border-white/20 rounded-t-3xl bottom-0 left-0 r fixed flex items-center justify-center gap-x-8 ${
+            isScrolled ? 'shadow-lg' : ''
+          }`}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          {['about', 'resume', 'portfolio', 'contact'].map((tab) => (
+            <button 
+              key={tab}
+              onClick={() => {
+                setActiveTab(tab);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`flex flex-col items-center justify-center h-full px-2 transition-colors ${
+                activeTab === tab ? 'text-amber-400' : 'text-white hover:text-gray-200'
+              }`}
+            >
+              <span className='text-xs capitalize'>{tab}</span>
+              {activeTab === tab && (
+                <motion.div 
+                  className='h-1 w-6 bg-amber-400 rounded-full mt-1'
+                  layoutId='navIndicator'
+                />
+              )}
+            </button>
+          ))}
+        </motion.div>
+      </div>
     );
   }
 

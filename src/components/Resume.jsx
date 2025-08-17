@@ -46,7 +46,7 @@ export default function Resume() {
 
   return (
     <motion.article 
-      className="resume mx-auto p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20"
+      className="resume mx-auto p-5 rounded-2xl bg-[rgb(27,37,50)] backdrop-blur-md border border-white/20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -93,7 +93,7 @@ export default function Resume() {
                 className="relative pl-10"
               >
                 <div className="absolute left-3 top-17 w-4 h-4 rounded-full bg-amber-500 border-4 border-gray-800 z-10"></div>
-                <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-amber-500/30 transition-all duration-300">
+                <div className="bg-[rgb(22,30,46)] backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-amber-500/30 transition-all duration-300">
                   <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-amber-500/20 text-amber-300 mb-2">
                     2022 — 2026
                   </span>

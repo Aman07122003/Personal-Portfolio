@@ -16,7 +16,7 @@ const Portfolio = () => {
         button: "bg-emerald-700 hover:bg-emerald-800"
       },
       link: "https://example.com/project-one",
-      tags: ["Organization", "Networking", "Productivity"]
+      tags: ["Frontend", "Referral-Log", "React"],
     },
     {
       title: "InterviewAI",
@@ -28,7 +28,7 @@ const Portfolio = () => {
         button: "bg-indigo-700 hover:bg-indigo-800"
       },
       link: "https://example.com/project-two",
-      tags: ["AI", "Interview Prep", "Career"]
+      tags: ["AI", "Interview Prep", "Career", "ChatGPT", "FullStack"]
     },
     {
       title: "ResultHub",
@@ -40,7 +40,7 @@ const Portfolio = () => {
         button: "bg-cyan-700 hover:bg-cyan-800"
       },
       link: "https://example.com/project-three",
-      tags: ["Education", "Analytics", "Dashboard"]
+      tags: ["Education", "Analytics", "Dashboard", "College-Result"]
     }
   ];
 

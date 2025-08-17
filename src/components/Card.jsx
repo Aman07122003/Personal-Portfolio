@@ -126,12 +126,10 @@ const Card = () => {
               <div>
                 <h2 className='text-2xl font-bold text-gray-100'>About Me</h2> 
                 <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>
-                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur placeat perferendis rem in suscipit facere cumque voluptate saepe ab, earum, dolores dolor eum exercitationem animi. Odio tempora nostrum similique sit.
-                Dolorum, rerum unde distinctio ad perferendis aut sed exercitationem excepturi 
+                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>Hello! I'm a passionate web developer with a keen interest in creating dynamic and responsive web applications. I have experience in various technologies including React, Node.js, and MongoDB. My goal is to build user-friendly interfaces that provide seamless experiences across devices.
                 </p>
 
-                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum numquam distinctio necessitatibus suscipit tempora iure quod laboriosam aspernatur enim, ex nisi deserunt qui labore obcaecati laborum illum mollitia eveniet et.
-                Incidunt aliquam earum maiores doloremque, inventore recusandae</p>
+                <p className='text-gray-300 text-[14px] font-light tracking-wide mt-4 font-sans'>I enjoy problem-solving and continuously learning new skills to enhance my development toolkit. In my free time, I like to contribute to open-source projects and explore the latest trends in web development.</p>
               </div>
               <div className='text-gray-100 font-bold text-xl'>What I'm Working On</div>
               {what_im_working_on.map((item) => (

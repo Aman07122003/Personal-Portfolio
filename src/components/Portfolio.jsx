@@ -8,13 +8,13 @@ const Portfolio = () => {
         {
             title: "Project One",
             description: "A brief description of project one.",
-            image: InterviewAI,
+            image: RefStack,
             link: "https://example.com/project-one"
         },
         {
             title: "Project Two",
             description: "A brief description of project two.",
-            image: RefStack,
+            image: InterviewAI,
             link: "https://example.com/project-two"
         },
         {

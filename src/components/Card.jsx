@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import avatar from '../../public/my-avatar.png';
+import avatar from '../assets/my-avatar.png';
 import Resume from './Resume.jsx';
 import Portfolio from './Portfolio.jsx';
 import Contact from './Contact.jsx';

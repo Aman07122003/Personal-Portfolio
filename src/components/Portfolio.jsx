@@ -1,7 +1,7 @@
-import React from 'react'
-import InterviewAI from '../../public/interviewAI.png';
-import RefStack from '../../public/RefStack.png';
-import ResultHub from '../../public/ResultHub.png';
+import React from 'react';
+import InterviewAI from '../assets/InterviewAI.png';
+import RefStack from '../assets/RefStack.png';
+import ResultHub from '../assets/resultHub.png';
 
 const Portfolio = () => {
     const project = [

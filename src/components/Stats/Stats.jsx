@@ -8,7 +8,7 @@ import {
   getUserFollowers,
   getUserFollowing,
   getRepoLanguages,
-} from "./API/api";
+} from "./API/githubAPI";
 import { FiGithub, FiUsers, FiStar, FiActivity, FiCalendar } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 

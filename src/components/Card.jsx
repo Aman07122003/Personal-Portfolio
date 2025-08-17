@@ -42,7 +42,7 @@ const Card = () => {
       icon: devops,
       name: "DevOps",
       input: "Implementing CI/CD pipelines and automation",
-      textStyle: "text-green-200 text-sm",
+      textStyle: "text-green-200 text-[11px]",
       theam: "from-green-700 to-green-400",
     },
     {
@@ -50,7 +50,7 @@ const Card = () => {
       icon: AI, // replace with your AI icon/image
       name: "Artificial Intelligence",
       input: "Building intelligent systems with ML & NLP",
-      textStyle: "text-purple-200 text-sm",
+      textStyle: "text-purple-200 text-[11px]",
       theam: "from-purple-400 to-purple-700",
     },
     {
@@ -58,7 +58,7 @@ const Card = () => {
       icon: Flutter,
       name: "Flutter",
       input: "Mobile development with cross-platform apps",
-      textStyle: "text-sky-200 text-sm",
+      textStyle: "text-sky-200 text-[11px]",
       theam: "from-blue-400 to-blue-700",
     }
   ];
@@ -146,14 +146,12 @@ const Card = () => {
               <div className='text-gray-100 font-bold text-xl'>What I'm Working On</div>
               {what_im_working_on.map((item) => (
                 <div className={`h-50 p-5 rounded-2xl gap-y-3 bg-gradient-to-r ${item.theam} backdrop-blur-md border border-white/20 flex flex-col justify-center items-center`}>
-                  <div className='w-50 h-30 flex justify-center'>
+                  <div className='w-40 h-20 flex justify-center'>
                     <img src={item.icon} alt={item.name} className='h-full object-cover rounded-2xl' />
                   </div>
                   <div className='flex justify-center flex-col items-center gap-y-2'>
                     <h2 className='text-xl font-bold text-gray-100'>{item.name}</h2>
-                    <div className="flex items-center justify-center">
-                      <p className={`${item.textStyle} text-center"`}>{item.input}</p>
-                    </div>
+                    <p className={`${item.textStyle} text-center"`}>{item.input}</p>
                   </div>
                 </div>
               ))}

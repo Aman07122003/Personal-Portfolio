@@ -5,11 +5,11 @@ import PortfolioLaptop from './Section/PortfolioLaptop'
 import ContactLaptop from './Section/ContactLaptop'
 
 const Content = () => {
-  const [activeSection, setActiveSection] = useState("about") // Default to section 1
+  const [activeSection, setActiveSection] = useState("contact") // Default to section 1
 
   return (
     <div className='w-[85%] h-auto flex justify-end pr-20 mt-10'>
-      <div className='w-[80%] p-5 flex flex-col h-[90%] bg-white/10 relative border border-white/20 rounded-2xl'>
+      <div className='w-[80%] p-5 flex flex-col bg-white/10 relative border border-white/20 rounded-2xl'>
 
         {/* Top Right Buttons Bar */}
         <div className='h-12 flex gap-2 px-3 items-center bg-white/5 absolute top-0 right-0 rounded-bl-2xl'>
@@ -38,7 +38,7 @@ const Content = () => {
         </div>
 
         {/* Sections */}
-        <div className='h-[1400px]'>
+        <div className='h-full'>
           {activeSection === "about" && (
             <div className='h-full p-4 rounded text-white'>
               <AboutLaptop />

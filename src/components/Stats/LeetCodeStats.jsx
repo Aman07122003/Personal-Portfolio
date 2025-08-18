@@ -25,7 +25,7 @@ const LeetCodeStats = ({ username = "Aman07122003" }) => {
 
   if (loading) {
     return (
-      <div className="mx-auto p-4 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg animate-pulse">
+      <div className="mx-auto p-5 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg animate-pulse">
         <div className="flex justify-between items-center mb-4">
           <div className="h-6 w-32 bg-gray-700 rounded"></div>
           <div className="h-4 w-20 bg-gray-700 rounded"></div>
@@ -58,7 +58,7 @@ const LeetCodeStats = ({ username = "Aman07122003" }) => {
   }
 
   return (
-    <div className="mx-auto p-2 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-amber-500/30 hover:scale-[1.02]">
+    <div className="mx-auto md:p-4 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-700 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl hover:border-amber-500/30 hover:scale-[1.02]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">

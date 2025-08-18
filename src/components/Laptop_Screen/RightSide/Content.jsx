@@ -5,7 +5,7 @@ import PortfolioLaptop from './Section/PortfolioLaptop'
 import ContactLaptop from './Section/ContactLaptop'
 
 const Content = () => {
-  const [activeSection, setActiveSection] = useState("resume") // Default to section 1
+  const [activeSection, setActiveSection] = useState("about") // Default to section 1
 
   return (
     <div className='w-[85%] h-auto flex justify-end pr-20 mt-10'>

@@ -4,6 +4,7 @@ import AI from '../assets/AI.png'
 import Flutter from '../assets/Flutter.png'
 import amitSharma from '../assets/amitSharma.jpg';
 import devops from '../assets/devops.png';
+import GitHubStats from './Stats/GitHubStats.jsx';
 
 
 const About = () => {
@@ -48,7 +49,8 @@ const About = () => {
               <div className='mt-5'>
                 <h2 className='text-2xl font-bold text-gray-100'>LeetCode Stats</h2>
                 <div className='w-10 h-1 bg-amber-300 mt-2 rounded-l-3xl'></div>
-                <div className='mt-5'>
+                <div className='mt-5 flex flex-col gap-4'>
+                  <GitHubStats />
                   <LeetCodeStats username="Aman07122003" />
                 </div>
               </div>

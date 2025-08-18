@@ -23,7 +23,7 @@ const socialLinks = [
 const Personal = () => {
   return (
     <div className='h-screen w-[29%] fixed flex justify-end p-2 mt-10'>
-      <div className='h-[90%] w-[68%] bg-white/10 border border-white/20 rounded-2xl flex flex-col gap-y-1 p-3'>
+      <div className='h-[90%] w-[68%] bg-white/5 border border-white/20 rounded-2xl flex flex-col gap-y-1 p-3'>
         
         {/* Profile Section */}
         <div className='h-[45%] w-full flex flex-col gap-y-5 justify-center items-center'>

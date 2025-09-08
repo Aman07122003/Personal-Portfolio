@@ -2,10 +2,23 @@ import React from 'react';
 import InterviewAI from '../../../../assets/InterviewAI.png';
 import RefStack from '../../../../assets/RefStack.png';
 import ResultHub from '../../../../assets/ResultHub.png';
+import PrepPad from '../../../../assets/PrepPad.png';
 import { FiExternalLink } from 'react-icons/fi';
 
 const PortfolioLaptop = () => {
   const projects = [
+    {
+      title: "DSA Master",
+      description: "A study and notes application for mastering data structures, algorithms, and interview preparation. Organize your learning resources and track progress efficiently.",
+      image: PrepPad,  // Replace with the actual image import or URL
+      theme: {
+        bg: "bg-gradient-to-br from-blue-600 to-blue-800",
+        text: "text-white",
+        button: "bg-blue-700 hover:bg-blue-900"
+      },
+      link: "https://prep-pad.vercel.app/",
+      tags: ["Study", "Notes", "DSA", "Interview Prep"]
+    },
     {
       title: "RefStack",
       description: "A personal catalog project to manage companies and employees, along with their social media details. Helps organize connections for future referral opportunities.",
@@ -15,7 +28,7 @@ const PortfolioLaptop = () => {
         text: "text-white",
         button: "bg-emerald-700 hover:bg-emerald-800"
       },
-      link: "https://example.com/project-one",
+      link: "https://ref-stack-alpha.vercel.app/",
       tags: ["Frontend", "Referral-Log", "React"],
     },
     {
@@ -27,7 +40,7 @@ const PortfolioLaptop = () => {
         text: "text-white",
         button: "bg-indigo-700 hover:bg-indigo-800"
       },
-      link: "https://example.com/project-two",
+      link: "https://interview-ai-frontend-q4s3.onrender.com/",
       tags: ["AI", "Interview Prep", "Career", "ChatGPT", "FullStack"]
     },
     {
@@ -39,7 +52,7 @@ const PortfolioLaptop = () => {
         text: "text-white",
         button: "bg-cyan-700 hover:bg-cyan-800"
       },
-      link: "https://example.com/project-three",
+      link: "https://result-calculator-omega.vercel.app/",
       tags: ["Education", "Analytics", "Dashboard", "College-Result"]
     }
   ];

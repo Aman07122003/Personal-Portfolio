@@ -82,7 +82,7 @@ const AboutLaptop = () => {
 
             {/* Stats Cards */}
             <motion.div 
-                className='mt-5 flex gap-2'
+                className='mt-5 flex justify-between'
                 variants={itemVariants}
             >
                 <GitHubStats />
